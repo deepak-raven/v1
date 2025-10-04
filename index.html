@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steampunk Voyager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #1a1a1a;
+        background-image: url(https://www.transparenttextures.com/patterns/dark-wood.png);
+      }
+      .font-heading {
+        font-family: 'Cinzel', serif;
+      }
+      .font-body {
+        font-family: 'Roboto Slab', serif;
+      }
+      /* Custom Animations */
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-rotate {
+        animation: rotate 20s linear infinite;
+      }
+      .animate-rotate-fast {
+        animation: rotate 5s linear infinite;
+      }
+      @keyframes rotate-reverse {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      .animate-rotate-reverse {
+        animation: rotate-reverse 25s linear infinite;
+      }
+      .animate-rotate-reverse-fast {
+        animation: rotate-reverse 7s linear infinite;
+      }
+
+      /* Logo Assembly Animations */
+      @keyframes assemble-gear-1 {
+        from { transform: translate(-150%, 100%) rotate(0deg); opacity: 0; }
+        to { transform: translate(0, 0) rotate(-360deg); opacity: 1; }
+      }
+      .animate-assemble-gear-1 { animation: assemble-gear-1 1.5s 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; }
+      
+      @keyframes assemble-gear-2 {
+        from { transform: translate(150%, -100%) rotate(0deg); opacity: 0; }
+        to { transform: translate(0, 0) rotate(360deg); opacity: 1; }
+      }
+      .animate-assemble-gear-2 { animation: assemble-gear-2 1.5s 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; }
+
+      @keyframes assemble-text {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-assemble-text { animation: assemble-text 1s 1s ease-out forwards; }
+
+      /* Tagline pulse */
+      @keyframes pulse-glow {
+        0%, 100% {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(192, 160, 98, 0.2);
+        }
+        50% {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(192, 160, 98, 0.4);
+        }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 4s ease-in-out infinite;
+      }
+
+      /* Revolver spin */
+      @keyframes spin-revolver {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-revolver {
+        animation: spin-revolver 0.5s linear;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
